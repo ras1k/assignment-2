@@ -1,11 +1,14 @@
 /* Google Fonts */
+
 body{
     font-family: 'Poppins', sans-serif;
 }
 
-/*----------
-top styles
-------------*/
+
+/*-------------
+    top styles
+---------------*/
+
 h1{
     font-size: 50px;
 }
@@ -20,7 +23,8 @@ h1{
     margin-bottom: 50px;
 }
 .top-section{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)
 }
 
 .journey{ 
@@ -28,10 +32,16 @@ h1{
     height: 270px;
     left: 120px;
     top: 285px;
+    margin-right: 200px;
 }
-.device{
-    padding-right: 100px;
+
+/* transition */
+.device:hover{
+        transform: rotate(15deg);
+        transition: transform 1.3s;
 }
+/* transition end */
+
 .device img{
     width: 440px;
     height: 414px;
@@ -47,12 +57,14 @@ h1{
     border-radius: 35px;
 }
 
-/*----------
-mid styles
-------------*/
+/*-------------
+    mid styles
+---------------*/
+
 .mid{
     padding-left: 100px;
     padding-right: 50px;
+    padding-bottom: 50px;
 }
 .mid-heading{
     text-align: center;
@@ -94,16 +106,55 @@ mid styles
     border-radius: 10px;
     padding: 10px;
 }
+.more{
+    text-align: end;
+    margin-right: 50px;
+    color: #E02C6D;;
+}
 
-/*------------
-Responsiveness
---------------*/
+/*----------------
+    lower styles 
+-----------------*/
+
+.lower-section{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+.lower-image img{
+    margin-left: 100px;
+    border-radius: 10px;
+}
+.lower-para{
+    margin-right: 100px;
+    padding-left: 10px;
+    border-left: 4px solid;
+    border-image: linear-gradient(rgba(94, 202, 235, 0.856), rgba(118, 238, 138, 0.747));
+    border-image-slice: 1;
+}
+
+/*-----------------------------------
+    Responsiveness with media query
+-------------------------------------*/
+
+/* for phones */
 
 @media only screen and (max-width:688px) {
-    .mid, .top{
+    .mid, .top, .low {
         width: 100%;
     }
-    .mid-blogs, .top-section{
+    .mid-blogs, .top-section, .lower-section{
         grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* for tabs */
+
+@media only screen and (min-width:688px) and (max-width:992px) {
+    .mid{
+        width: 100%;
+    }
+    .mid-blogs{
+        grid-template-columns: repeat(2, 1fr);
     }
 }
