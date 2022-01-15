@@ -2,6 +2,7 @@
 
 body{
     font-family: 'Poppins', sans-serif;
+    margin: 0;
 }
 
 
@@ -55,6 +56,20 @@ h1{
     font-weight: 700;
     padding: 10px 20px;
     border-radius: 35px;
+}
+.arrow{
+    margin-left: 10px;
+}
+
+.brands{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+
 }
 
 /*-------------
@@ -133,6 +148,17 @@ h1{
     border-image-slice: 1;
 }
 
+/*-----------------
+    footer style
+-------------------*/
+
+.leg{
+    text-align: center;
+    color: white;
+    background-color: rgb(11, 11, 32);
+    min-height: 20vh;
+}
+
 /*-----------------------------------
     Responsiveness with media query
 -------------------------------------*/
@@ -143,9 +169,13 @@ h1{
     .mid, .top, .low {
         width: 100%;
     }
-    .mid-blogs, .top-section, .lower-section{
+    .mid-blogs, .top-section, .lower-section, .brands{
         grid-template-columns: repeat(1, 1fr);
+        gap: 1cm;
     }
+    .lower-image img{
+        margin-left: 0;
+}
 }
 
 /* for tabs */
@@ -154,7 +184,11 @@ h1{
     .mid{
         width: 100%;
     }
-    .mid-blogs{
+    .mid-blogs, .brands{
         grid-template-columns: repeat(2, 1fr);
+        gap: 1cm;
+    }
+    .more{
+        text-align: left;
     }
 }
